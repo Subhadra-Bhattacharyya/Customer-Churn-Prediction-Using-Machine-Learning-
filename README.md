@@ -75,7 +75,8 @@ Random Forest was chosen for final deployment.
   'MonthlyCharges': 29.85,
   'TotalCharges': 29.85
 }
-📈 Results (Test Set)
+
+##📈 Results (Test Set)
 Metric	Score
 Accuracy	77.8%
 Precision	58%
@@ -114,4 +115,5 @@ Integrate into real-time churn monitoring system
 👩‍💻 Author
 Subhadra Bhattacharyya
 Aspiring Data Scientist | Machine Learning Enthusiast
-contact: subhadrabhattacharyya7@gmail.com
+
+
