@@ -7,51 +7,49 @@ This project predicts whether a customer is likely to **churn (leave the service
 ## 🗂️ Dataset
 
 - **Source**: Telco Customer Churn Dataset (IBM Sample)
-- **Rows**: 7,043 customers
+- **Records**: 7,043 customers
 - **Target**: `Churn` (Yes / No)
 - **Features**: Demographics, service usage, billing info, contract types
 
 ---
 
-## 🧠 ML Models Used
+## 🧠 Machine Learning Models Used
 
-| Model            | Accuracy (CV) |
-|------------------|---------------|
-| Decision Tree    | 78%           |
-| XGBoost          | 83%           |
-| ✅ Random Forest | **84%**       |
-
-Random Forest was chosen for final deployment.
+| Model           | Cross-Validation Accuracy |
+|-----------------|---------------------------|
+| Decision Tree   | 78%                        |
+| XGBoost         | 83%                        |
+| ✅ Random Forest | **84%** (Best Performer)   |
 
 ---
 
 ## 🔍 Project Workflow
 
 1. **Data Cleaning**
-   - Removed non-informative columns like `customerID`
-   - Fixed blank values in `TotalCharges` column
-   - Converted data types appropriately
+   - Removed irrelevant column `customerID`
+   - Handled blank values in `TotalCharges`
+   - Converted columns to appropriate data types
 
 2. **Exploratory Data Analysis (EDA)**
-   - Visualized distributions of numerical and categorical features
-   - Detected churn trends in contract types and payment methods
+   - Histograms, boxplots, and countplots for insights
+   - Identified key features contributing to churn
 
-3. **Preprocessing**
-   - Label-encoded all categorical columns using `LabelEncoder`
-   - Handled class imbalance using **SMOTE**
+3. **Data Preprocessing**
+   - Label-encoded categorical features
+   - Used **SMOTE** to handle class imbalance
 
 4. **Model Training**
    - Trained Decision Tree, Random Forest, and XGBoost
-   - Evaluated using 5-fold cross-validation and test set performance
+   - Evaluated with 5-fold cross-validation
 
 5. **Model Deployment**
    - Saved model as `customer_churn_model.pkl`
    - Saved encoders as `encoders.pkl`
-   - Built a **user-input based prediction system**
+   - Built an interactive user-input prediction system
 
 ---
 
-## 📊 Sample User Input for Prediction
+## 🧾 Sample Input for Prediction
 
 ```python
 {
@@ -75,8 +73,7 @@ Random Forest was chosen for final deployment.
   'MonthlyCharges': 29.85,
   'TotalCharges': 29.85
 }
-
-##📈 Results (Test Set)
+📈 Results (Test Set)
 Metric	Score
 Accuracy	77.8%
 Precision	58%
@@ -87,33 +84,34 @@ F1-Score	58%
 File	Description
 Churn_Prediction.ipynb	Main Colab notebook
 customer_churn_model.pkl	Trained Random Forest model
-encoders.pkl	Saved label encoders
+encoders.pkl	Saved label encoders for prediction
 Telco-Customer-Churn.csv	Dataset used for training
 
 🛠 Technologies Used
 Python (Pandas, NumPy)
 
-Scikit-learn, XGBoost
+Scikit-learn
+
+XGBoost
 
 imbalanced-learn (SMOTE)
 
-Seaborn & Matplotlib (EDA)
+Seaborn & Matplotlib (for EDA)
 
 Pickle (model serialization)
 
 Google Colab
 
 🚀 Future Enhancements
-Hyperparameter tuning with GridSearchCV or Optuna
+Add hyperparameter tuning using GridSearchCV / Optuna
 
-Model explainability using SHAP/LIME
+Integrate explainability with SHAP / LIME
 
-Deploy as a web app using Streamlit or Flask
+Deploy as a web application using Streamlit or Flask
 
-Integrate into real-time churn monitoring system
+Integrate with real-time churn monitoring pipelines
 
 👩‍💻 Author
 Subhadra Bhattacharyya
 Aspiring Data Scientist | Machine Learning Enthusiast
-
 
