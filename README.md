@@ -1,55 +1,57 @@
-# 📉 Customer Churn Prediction - Machine Learning Project
+# 📉 Customer Churn Prediction using Machine Learning
 
-This project predicts whether a customer will **churn (leave the service)** in a telecom company using historical usage and contract data. The goal is to help the company **retain customers** by identifying potential churners in advance.
-
----
-
-## 📁 Dataset
-
-- **Source**: Telco Customer Churn Dataset
-- **Records**: 7043
-- **Target Variable**: `Churn` (`Yes` or `No`)
-- **Features**: Gender, SeniorCitizen, Tenure, MonthlyCharges, InternetService, Contract, PaymentMethod, etc.
+This project predicts whether a customer is likely to **churn (leave the service)** for a telecom company using supervised machine learning techniques. It includes end-to-end development — from data cleaning and feature engineering to model training, evaluation, and deployment.
 
 ---
 
-## 🧠 Models Used
+## 🗂️ Dataset
 
-- Decision Tree Classifier
-- Random Forest Classifier ✅ *(Best Performer)*
-- XGBoost Classifier
+- **Source**: Telco Customer Churn Dataset (IBM Sample)
+- **Rows**: 7,043 customers
+- **Target**: `Churn` (Yes / No)
+- **Features**: Demographics, service usage, billing info, contract types
 
 ---
 
-## 🔍 Workflow Summary
+## 🧠 ML Models Used
 
-1. **Data Cleaning**:
-   - Removed irrelevant columns
-   - Handled missing/blank values
-   - Converted data types
+| Model            | Accuracy (CV) |
+|------------------|---------------|
+| Decision Tree    | 78%           |
+| XGBoost          | 83%           |
+| ✅ Random Forest | **84%**       |
 
-2. **Exploratory Data Analysis (EDA)**:
-   - Visualized numerical and categorical distributions
-   - Examined correlations and outliers
+Random Forest was chosen for final deployment.
 
-3. **Data Preprocessing**:
-   - Label encoded categorical features
+---
+
+## 🔍 Project Workflow
+
+1. **Data Cleaning**
+   - Removed non-informative columns like `customerID`
+   - Fixed blank values in `TotalCharges` column
+   - Converted data types appropriately
+
+2. **Exploratory Data Analysis (EDA)**
+   - Visualized distributions of numerical and categorical features
+   - Detected churn trends in contract types and payment methods
+
+3. **Preprocessing**
+   - Label-encoded all categorical columns using `LabelEncoder`
    - Handled class imbalance using **SMOTE**
 
-4. **Model Training**:
-   - Used 5-fold cross-validation
-   - Evaluated with Accuracy, Precision, Recall, F1-Score
+4. **Model Training**
+   - Trained Decision Tree, Random Forest, and XGBoost
+   - Evaluated using 5-fold cross-validation and test set performance
 
-5. **Model Selection**:
-   - ✅ Random Forest achieved ~84% CV Accuracy
-
-6. **Deployment Ready System**:
-   - Saved model (`customer_churn_model.pkl`) and encoders
-   - Built a **user-interactive prediction system** in Python
+5. **Model Deployment**
+   - Saved model as `customer_churn_model.pkl`
+   - Saved encoders as `encoders.pkl`
+   - Built a **user-input based prediction system**
 
 ---
 
-## 📊 Example Input for Prediction
+## 📊 Sample User Input for Prediction
 
 ```python
 {
@@ -73,3 +75,43 @@ This project predicts whether a customer will **churn (leave the service)** in a
   'MonthlyCharges': 29.85,
   'TotalCharges': 29.85
 }
+📈 Results (Test Set)
+Metric	Score
+Accuracy	77.8%
+Precision	58%
+Recall	59%
+F1-Score	58%
+
+💾 Project Files
+File	Description
+Churn_Prediction.ipynb	Main Colab notebook
+customer_churn_model.pkl	Trained Random Forest model
+encoders.pkl	Saved label encoders
+Telco-Customer-Churn.csv	Dataset used for training
+
+🛠 Technologies Used
+Python (Pandas, NumPy)
+
+Scikit-learn, XGBoost
+
+imbalanced-learn (SMOTE)
+
+Seaborn & Matplotlib (EDA)
+
+Pickle (model serialization)
+
+Google Colab
+
+🚀 Future Enhancements
+Hyperparameter tuning with GridSearchCV or Optuna
+
+Model explainability using SHAP/LIME
+
+Deploy as a web app using Streamlit or Flask
+
+Integrate into real-time churn monitoring system
+
+👩‍💻 Author
+Subhadra Bhattacharyya
+Aspiring Data Scientist | Machine Learning Enthusiast
+contact: subhadrabhattacharyya7@gmail.com
