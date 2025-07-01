@@ -77,7 +77,9 @@ This project predicts whether a customer is likely to **churn (leave the service
   'MonthlyCharges': 29.85,
   'TotalCharges': 29.85
 }
-📈 Results (Test Set)
+
+
+##📈 Results (Test Set)
 Metric	Score
 Accuracy	77.8%
 Precision	58%
