@@ -50,31 +50,6 @@ This project predicts whether a customer is likely to **churn (leave the service
 
 ---
 
-## 🧾 Sample Input for Prediction
-
-```python
-{
-  'gender': 'Female',
-  'SeniorCitizen': 0,
-  'Partner': 'Yes',
-  'Dependents': 'No',
-  'tenure': 1,
-  'PhoneService': 'No',
-  'MultipleLines': 'No phone service',
-  'InternetService': 'DSL',
-  'OnlineSecurity': 'No',
-  'OnlineBackup': 'Yes',
-  'DeviceProtection': 'No',
-  'TechSupport': 'No',
-  'StreamingTV': 'No',
-  'StreamingMovies': 'No',
-  'Contract': 'Month-to-month',
-  'PaperlessBilling': 'Yes',
-  'PaymentMethod': 'Electronic check',
-  'MonthlyCharges': 29.85,
-  'TotalCharges': 29.85
-}
----
 ##📈 Results (Test Set)
 Metric	Score
 Accuracy	77.8%
@@ -112,6 +87,33 @@ Integrate explainability with SHAP / LIME
 Deploy as a web application using Streamlit or Flask
 
 Integrate with real-time churn monitoring pipelines
+---
+
+## 🧾 Sample Input for Prediction
+
+```python
+{
+  'gender': 'Female',
+  'SeniorCitizen': 0,
+  'Partner': 'Yes',
+  'Dependents': 'No',
+  'tenure': 1,
+  'PhoneService': 'No',
+  'MultipleLines': 'No phone service',
+  'InternetService': 'DSL',
+  'OnlineSecurity': 'No',
+  'OnlineBackup': 'Yes',
+  'DeviceProtection': 'No',
+  'TechSupport': 'No',
+  'StreamingTV': 'No',
+  'StreamingMovies': 'No',
+  'Contract': 'Month-to-month',
+  'PaperlessBilling': 'Yes',
+  'PaymentMethod': 'Electronic check',
+  'MonthlyCharges': 29.85,
+  'TotalCharges': 29.85
+}
+
 
 👩‍💻 Author
 Subhadra Bhattacharyya
