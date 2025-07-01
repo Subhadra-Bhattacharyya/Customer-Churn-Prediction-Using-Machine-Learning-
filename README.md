@@ -1,95 +1,72 @@
-
 # 📉 Customer Churn Prediction using Machine Learning
 
-This project predicts whether a customer is likely to **churn (leave the service)** for a telecom company using supervised machine learning techniques. It includes end-to-end development — from data cleaning and feature engineering to model training, evaluation, and deployment.
+This project predicts whether a customer is likely to **churn (leave the telecom service)** using historical customer behavior and contract data. It applies **SMOTE**, **machine learning models**, and **user-interactive forecasting** to support proactive retention strategies.
 
 ---
 
-## 🗂️ Dataset
+## 🚀 Project Objectives
 
-- **Source**: Telco Customer Churn Dataset (IBM Sample)
-- **Records**: 7,043 customers
-- **Target**: `Churn` (Yes / No)
-- **Features**: Demographics, service usage, billing info, contract types
-
----
-
-## 🧠 Machine Learning Models Used
-
-| Model           | Cross-Validation Accuracy |
-|-----------------|---------------------------|
-| Decision Tree   | 78%                        |
-| XGBoost         | 83%                        |
-| ✅ Random Forest | **84%** (Best Performer)   |
+- Analyze customer service, demographic, and billing data  
+- Handle class imbalance using **SMOTE**  
+- Train multiple ML models for churn classification  
+- Build an interactive system for churn prediction using custom input  
+- Save and reuse model and encoders using `pickle`
 
 ---
 
-## 🔍 Project Workflow
+## 🧾 Dataset Overview
 
-1. **Data Cleaning**
-   - Removed irrelevant column `customerID`
-   - Handled blank values in `TotalCharges`
-   - Converted columns to appropriate data types
-
-2. **Exploratory Data Analysis (EDA)**
-   - Histograms, boxplots, and countplots for insights
-   - Identified key features contributing to churn
-
-3. **Data Preprocessing**
-   - Label-encoded categorical features
-   - Used **SMOTE** to handle class imbalance
-
-4. **Model Training**
-   - Trained Decision Tree, Random Forest, and XGBoost
-   - Evaluated with 5-fold cross-validation
-
-5. **Model Deployment**
-   - Saved model as `customer_churn_model.pkl`
-   - Saved encoders as `encoders.pkl`
-   - Built an interactive user-input prediction system
+- **Source**: IBM Sample — Telco Customer Churn Dataset  
+- **Records**: 7,043 customers  
+- **Target Column**: `Churn` (Yes/No)  
+- **Features**: Demographics, service plans, payment methods, tenure, charges, etc.
 
 ---
 
-##📈 Results (Test Set)
-Metric	Score
-Accuracy	77.8%
-Precision	58%
-Recall	59%
-F1-Score	58%
+## 🧠 Models Used
 
-💾 Project Files
-File	Description
-Churn_Prediction.ipynb	Main Colab notebook
-customer_churn_model.pkl	Trained Random Forest model
-encoders.pkl	Saved label encoders for prediction
-Telco-Customer-Churn.csv	Dataset used for training
+| Model            | Accuracy (CV) |
+|------------------|---------------|
+| Decision Tree    | 78%           |
+| XGBoost          | 83%           |
+| ✅ Random Forest | **84%**       |
 
-🛠 Technologies Used
-Python (Pandas, NumPy)
+> ✅ Random Forest was selected for final deployment due to its strong performance and generalization.
 
-Scikit-learn
-
-XGBoost
-
-imbalanced-learn (SMOTE)
-
-Seaborn & Matplotlib (for EDA)
-
-Pickle (model serialization)
-
-Google Colab
-
-🚀 Future Enhancements
-Add hyperparameter tuning using GridSearchCV / Optuna
-
-Integrate explainability with SHAP / LIME
-
-Deploy as a web application using Streamlit or Flask
-
-Integrate with real-time churn monitoring pipelines
 ---
 
-## 🧾 Sample Input for Prediction
+## ⚙️ Technologies
+
+- Python (Google Colab)  
+- Libraries: `pandas`, `numpy`, `seaborn`, `matplotlib`, `scikit-learn`, `xgboost`, `imbalanced-learn`  
+- Tools: `LabelEncoder`, `SMOTE`, `cross_val_score`, `pickle`
+
+---
+
+## 🧪 Methodology
+
+1. **Data Preprocessing**  
+   - Dropped non-informative columns like `customerID`  
+   - Handled blank values in `TotalCharges`, converted to float  
+   - Encoded categorical variables  
+   - Used **SMOTE** to balance the target class
+
+2. **Exploratory Data Analysis (EDA)**  
+   - Count plots, histograms, box plots  
+   - Time-independent feature distribution  
+   - Heatmap for numerical correlations
+
+3. **Model Training**  
+   - Applied 3 models: Decision Tree, Random Forest, XGBoost  
+   - Evaluated using 5-fold cross-validation and accuracy
+
+4. **Deployment**  
+   - Saved trained model (`.pkl`) and encoders  
+   - Built a dynamic user input system to predict churn status
+
+---
+
+## 👤 User Input Example
 
 ```python
 {
@@ -113,10 +90,45 @@ Integrate with real-time churn monitoring pipelines
   'MonthlyCharges': 29.85,
   'TotalCharges': 29.85
 }
+📈 Model Evaluation
+Metric	Score
+Accuracy	77.8%
+Precision	58%
+Recall	59%
+F1 Score	58%
 
+📁 Project Structure
+File	Description
+Churn_Prediction.ipynb	Full Colab notebook (EDA + ML)
+customer_churn_model.pkl	Trained Random Forest model
+encoders.pkl	Saved encoders for label mapping
+Telco-Customer-Churn.csv	Dataset used for training
 
-👩‍💻 Author
-Subhadra Bhattacharyya
-Aspiring Data Scientist | Machine Learning Enthusiast
+📌 Features
+📊 Interactive prediction system
 
+✅ Class imbalance solved using SMOTE
+
+🔁 Model & encoder reuse with pickle
+
+🧠 Predicts churn likelihood based on real customer profiles
+
+✅ Conclusion
+This project demonstrates a practical machine learning solution for customer churn prediction. By leveraging class balancing, ensemble models, and real-world user inputs, it helps telecom companies act before losing customers.
+
+🤝 Contributing
+Open to contributions:
+
+Model hyperparameter tuning (GridSearchCV, Optuna)
+
+SHAP or LIME integration for explainability
+
+Streamlit/Flask deployment
+
+Dashboard-based visualization
+
+📬 Contact
+Author: Subhadra Bhattacharyya
+📧 Email: subhadrabhattacharyya7@gmail.com
+🌐 Location: India
 
