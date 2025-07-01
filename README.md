@@ -1,7 +1,4 @@
 
-markdown
-Copy
-Edit
 # 📉 Customer Churn Prediction using Machine Learning
 
 This project predicts whether a customer is likely to **churn (leave the service)** for a telecom company using supervised machine learning techniques. It includes end-to-end development — from data cleaning and feature engineering to model training, evaluation, and deployment.
@@ -77,8 +74,7 @@ This project predicts whether a customer is likely to **churn (leave the service
   'MonthlyCharges': 29.85,
   'TotalCharges': 29.85
 }
-
-
+---
 ##📈 Results (Test Set)
 Metric	Score
 Accuracy	77.8%
@@ -120,4 +116,5 @@ Integrate with real-time churn monitoring pipelines
 👩‍💻 Author
 Subhadra Bhattacharyya
 Aspiring Data Scientist | Machine Learning Enthusiast
+
 
