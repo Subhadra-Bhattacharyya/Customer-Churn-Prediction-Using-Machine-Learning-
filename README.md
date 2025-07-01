@@ -1,3 +1,7 @@
+
+markdown
+Copy
+Edit
 # 📉 Customer Churn Prediction using Machine Learning
 
 This project predicts whether a customer is likely to **churn (leave the service)** for a telecom company using supervised machine learning techniques. It includes end-to-end development — from data cleaning and feature engineering to model training, evaluation, and deployment.
